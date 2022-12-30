@@ -1,0 +1,61 @@
+{
+    "totalItems": 4,
+    "totalPages": 1,
+    "pageSize": 4,
+    "currentPage": 0,
+    "content": [
+        {
+            "id": 1,
+            "user": {
+                "id": 1,
+                "username": "user",
+                "password": "#!wafg#@-0asg+@!*sfe$",
+                "type": "client",
+                "profile": {
+                    "id": 1,
+                    "name" : "User"
+                }
+            },
+            "role": "owner"
+        },
+        {
+            "id": 2,
+            "user": {
+                "username": "jose_silva",
+                "password": "#!wafg#@56sg+@!*s1e$",
+                "type": "client",
+                "profile": {
+                    "id": 12,
+                    "name" : "José Silva"
+                }
+            },
+            "role": "manager"
+        },
+        {
+            "id": 3,
+            "user": {
+                "username": "aline_pereira",
+                "password": "#!wafZR5$%34!*s89$",
+                "type": "client",
+                "profile": {
+                    "id": 13,
+                    "name" : "Aline Pereira"
+                }
+            },
+            "role": "v"
+        },
+        {
+            "id": 4,
+            "user": {
+                "username": "osmar_carneiro",
+                "password": "$%5wafFG$%FG3g+QE$fe$",
+                "type": "client",
+                "profile": {
+                    "id": 14,
+                    "name" : "Osmar Carneiro"
+                }
+            },
+            "role": "employee"
+        }
+    ]
+}

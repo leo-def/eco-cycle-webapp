@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "cep": "68040810",
+        "street": "Rua Santo André",
+        "number": "1234",
+        "city": "Santarém",
+        "country": "Brazil",
+        "state": "PA",
+        "neighborhood": "Fátima",
+        "complement": null
+    },
+    {
+        "id": 2,
+        "cep": "68903870",
+        "street": "Rua Adrião Rocha Oliveira",
+        "number": "6557",
+        "city": "Macapá",
+        "country": "Brazil",
+        "state": "AP",
+        "neighborhood": "Araxá",
+        "complement": null
+    },
+    {
+        "id": 3,
+        "cep": "18074651",
+        "street": "Rua Belmiro Moreira Soares",
+        "number": "1234",
+        "city": "Sorocaba",
+        "country": "Brazil",
+        "state": "SP",
+        "neighborhood": "Jardim São Guilherme",
+        "complement": null
+    },
+    {
+        "id": 4,
+        "cep": "77015690",
+        "street": "Quadra 407 Sul Avenida NS 7",
+        "number": "1234",
+        "city": "Palmas",
+        "country": "Brazil",
+        "state": "TO",
+        "neighborhood": "Plano Diretor Sul",
+        "complement": null
+    } 
+]
