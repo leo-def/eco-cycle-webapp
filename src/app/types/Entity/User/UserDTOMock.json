@@ -1,0 +1,10 @@
+{
+    "id": 1,
+    "username": "user",
+    "password": "#!wafg#@-0asg+@!*sfe$",
+    "role": "admin",
+    "profile": {
+        "id": 1,
+        "name" : "User"
+    }
+}

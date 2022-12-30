@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "username": "user",
+        "password": "#!wafg#@-0asg+@!*sfe$",
+        "role": "admin",
+        "profile": {
+            "id": 11,
+            "name" : "User"
+        }
+    },
+    {
+        "id": 2,
+        "username": "jose_silva",
+        "password": "#!wafg#@56sg+@!*s1e$",
+        "role": "client",
+        "profile": {
+            "id": 12,
+            "name" : "José Silva"
+        }
+    },
+    {
+        "id": 3,
+        "username": "aline_pereira",
+        "password": "#!wafZR5$%34!*s89$",
+        "role": "client",
+        "profile": {
+            "id": 13,
+            "name" : "Aline Pereira"
+        }
+    },
+    {
+        "id": 4,
+        "username": "osmar_carneiro",
+        "password": "$%5wafFG$%FG3g+QE$fe$",
+        "role": "client",
+        "profile": {
+            "id": 14,
+            "name" : "Osmar Carneiro"
+        }
+    }
+]

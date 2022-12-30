@@ -1,0 +1,60 @@
+{
+    "totalItems": 4,
+    "totalPages": 1,
+    "pageSize": 4,
+    "currentPage": 0,
+    "content": [
+        {
+            "id": 1,
+            "title": "Garrafa Pet",
+            "media": [
+                {
+                    "id": 2223,
+                    "alt": "Garrafa PET",
+                    "type": "image",
+                    "mediaType": "image/jpeg",
+                    "src": "data:image/jpeg;base64,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"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Reciclagem Eletrodomestico",
+            "media": [
+                {
+                    "id": 4113,
+                    "alt": "Reciclagem Eletrodomestico",
+                    "type": "image",
+                    "mediaType": "image/apng",
+                    "src": "https://www.reciclagemfacil.com.br/media/sig_fQMB9T64pO/produtos/descarte-de-eletrodomestico-com-avaria/descarte-de-eletrodomestico-com-avaria-06.jpeg"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Lata",
+            "media": [
+                {
+                    "id": 4521,
+                    "alt": "Lata",
+                    "type": "image",
+                    "mediaType": "image/jpeg",
+                    "src": "https://revistaaluminio.com.br/wp-content/uploads/2018/12/AdobeStock_39031314.jpg"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Item ferro",
+            "media": [
+                {
+                    "id": 2182,
+                    "alt": "Item ferro",
+                    "type": "image",
+                    "mediaType": "image/jpeg",
+                    "src": "https://pensamentoverde.com.br/wp-content/uploads/2014/04/img216-300x225.jpg"
+                }
+            ]
+        }
+    ]
+}

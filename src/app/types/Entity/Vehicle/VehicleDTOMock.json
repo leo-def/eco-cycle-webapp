@@ -1,0 +1,15 @@
+{
+    "id": 1,
+    "plate": "AZK2340",
+    "media": [
+        {
+            "id": 3,
+            "alt": "Caminhão",
+            "type": "image",
+            "mediaType": "image/apng",
+            "src": "https://xadmin.s3.us-east-2.amazonaws.com/7/news/22238/image/original/9effef1eaa997ed08da1ff8587063062.jpg"
+        }
+    ],
+    "title": "Caminhão",
+    "type": "truck"
+}

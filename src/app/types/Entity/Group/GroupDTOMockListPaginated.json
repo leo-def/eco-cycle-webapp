@@ -1,0 +1,98 @@
+{
+    "totalItems": 4,
+    "totalPages": 1,
+    "pageSize": 4,
+    "currentPage": 0,
+    "content": [
+        {
+            "id": 1,
+            "createAt": "2022-08-29T04:34:40.000Z",
+            "updateAt": "2022-08-29T04:34:40.000Z",
+            "type": "supply",
+            "owner": {
+                "id": 3,
+                "createAt": "2022-08-29T04:04:14.000Z",
+                "updateAt": "2022-08-29T04:04:14.000Z",
+                "username": "luis-assis",
+                "password": "luis1234",
+                "type": "client",
+                "profile": {
+                    "id": 3,
+                    "createAt": "2022-08-29T04:04:14.000Z",
+                    "updateAt": "2022-08-29T04:04:14.000Z",
+                    "name": "Luis Francisco de Assis"
+                }
+            },
+            "collaborators": [],
+            "places": [],
+            "vehicles": []
+        },
+        {
+            "id": 2,
+            "createAt": "2022-08-29T04:39:56.000Z",
+            "updateAt": "2022-08-29T04:39:56.000Z",
+            "type": "collect",
+            "owner": {
+                "id": 4,
+                "createAt": "2022-08-29T04:04:51.000Z",
+                "updateAt": "2022-08-29T04:04:51.000Z",
+                "username": "joao-soares",
+                "password": "joao1234",
+                "type": "client",
+                "profile": {
+                    "id": 4,
+                    "createAt": "2022-08-29T04:04:51.000Z",
+                    "updateAt": "2022-08-29T04:04:51.000Z",
+                    "name": "Joao Francisco Soares"
+                }
+            },
+            "collaborators": [],
+            "places": [
+                {
+                    "id": 5,
+                    "createAt": "2022-09-08T03:28:33.000Z",
+                    "updateAt": "2022-09-08T03:28:33.000Z",
+                    "title": "Centro de Reciclagem Carpina",
+                    "type": "collect",
+                    "address": {
+                        "id": 1,
+                        "createAt": "2022-09-08T03:28:33.000Z",
+                        "updateAt": "2022-09-08T03:28:33.000Z",
+                        "cep": "55816320",
+                        "street": "Rua Humberto de Campos",
+                        "number": "105",
+                        "city": "Carpina",
+                        "country": "Brazil",
+                        "state": "PE",
+                        "neighborhood": "Santo Antônio",
+                        "complement": ""
+                    }
+                }
+            ],
+            "vehicles": []
+        },
+        {
+            "id": 3,
+            "createAt": "2022-08-29T04:40:39.000Z",
+            "updateAt": "2022-08-29T04:40:39.000Z",
+            "type": "both",
+            "owner": {
+                "id": 5,
+                "createAt": "2022-08-29T04:16:43.000Z",
+                "updateAt": "2022-08-29T04:16:43.000Z",
+                "username": "antonio-soares",
+                "password": "antonio1234",
+                "type": "client",
+                "profile": {
+                    "id": 5,
+                    "createAt": "2022-08-29T04:16:43.000Z",
+                    "updateAt": "2022-08-29T04:16:43.000Z",
+                    "name": "Antonio Moreira"
+                }
+            },
+            "collaborators": [],
+            "places": [],
+            "vehicles": []
+        }
+    ]
+}

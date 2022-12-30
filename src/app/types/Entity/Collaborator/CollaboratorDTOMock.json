@@ -1,0 +1,14 @@
+{
+    "id": 1,
+    "user": {
+        "id": 1,
+        "username": "user",
+        "password": "#!wafg#@-0asg+@!*sfe$",
+        "type": "client",
+        "profile": {
+            "id": 1,
+            "name" : "User"
+        }
+    },
+    "role": "owner"
+}
