@@ -1,6 +1,5 @@
 import * as Yup from 'yup';
 import { EntityFieldset, EntityFieldsetSchema, entityFieldsetInitialValues } from '../Abstract/EntityFieldset';
-import { MeasurementUnitFieldset, MeasurementUnitFieldsetSchema, measurementUnitFieldsetInitialValues } from './Measure/MeasurementUnitFieldset';
 
 export interface ValueFieldset extends EntityFieldset {
   measurementUnitId: number | null;

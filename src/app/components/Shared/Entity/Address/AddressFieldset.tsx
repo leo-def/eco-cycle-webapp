@@ -5,7 +5,7 @@ import { Field, useField } from 'formik';
 import { TextField } from 'formik-mui';
 import { Search as SearchIcon, Clear as ClearIcon } from '@mui/icons-material';
 import { AddressEnum } from '../../../../enums/Action/Address.enum';
-import { getFormName, getFieldName, isFieldDisabled, isFieldHidden } from '../../../../utils/FormUtils';
+import { getFieldName, isFieldDisabled, isFieldHidden } from '../../../../utils/FormUtils';
 import { EntityFieldset } from '../Entity/EntityFieldset';
 import { AddressUtils } from '../../../../utils/AddressUtils';
 import { RootState } from '../../../../reducers';
