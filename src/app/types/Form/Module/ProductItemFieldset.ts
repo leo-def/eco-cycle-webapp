@@ -1,7 +1,6 @@
 import * as Yup from 'yup';
 import { EntityFieldset, EntityFieldsetSchema, entityFieldsetInitialValues } from '../Abstract/EntityFieldset';
 import { MediaFieldset, MediaFieldsetSchema } from './MediaFieldset';
-import { ProductFieldset, ProductFieldsetSchema, productFieldsetInitialValues } from './ProductFieldset';
 import { ValueFieldset, ValueFieldsetSchema, valueFieldsetInitialValues } from './ValueFieldset';
 
 export interface ProductItemFieldset extends EntityFieldset {

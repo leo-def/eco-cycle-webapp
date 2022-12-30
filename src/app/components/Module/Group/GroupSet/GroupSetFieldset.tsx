@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useMemo } from 'react';
-import { Field, useField } from 'formik';
+import { useField } from 'formik';
 import { getSetGroup } from '../../../../hooks/Module/Group/Set';
-import { getFieldName } from '../../../../utils/FormUtils';
 
 /**
  * GroupSetFieldset

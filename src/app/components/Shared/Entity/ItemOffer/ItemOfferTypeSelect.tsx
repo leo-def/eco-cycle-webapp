@@ -1,8 +1,7 @@
 import React, { useCallback, useEffect, useMemo } from 'react';
-import { MenuItem } from '@mui/material';
 import { Field, useField } from 'formik';
 import { Select } from 'formik-mui';
-import { getItemOfferType } from '../../../../hooks/Module/ItemOffer/ItemOfferType';
+import { MenuItem } from '@mui/material';
 
 /**
  * ItemOfferTypeSelect

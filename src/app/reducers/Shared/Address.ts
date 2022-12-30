@@ -1,6 +1,4 @@
 import { AddressEnum } from '../../enums/Action/Address.enum';
-import { AddressUtils } from '../../utils/AddressUtils';
-
 
 export interface Address {
   cep?: string;

@@ -1,12 +1,10 @@
 import
 React,
 {
-  useMemo,
   useEffect,
   useCallback
 }
   from 'react';
-// import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AuthEnum } from '../../../../../enums/Action/Auth.enum';
 import { RootState } from '../../../../../reducers';

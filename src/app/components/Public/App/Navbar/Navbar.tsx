@@ -1,15 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LoginIcon from '@mui/icons-material/Login';
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  Typography,
+  IconButton
+} from '@mui/material';
+import {
+  LightMode as LightModeIcon,
+  DarkMode as DarkModeIcon,
+  Login as LoginIcon
+} from '@mui/icons-material';
 import { getIsLightTheme } from '../../../../hooks/Theme';
 import { ThemeEnum } from '../../../../enums/Action/Theme.enum';
 /**
