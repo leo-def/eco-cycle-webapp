@@ -45,9 +45,7 @@ export const Navbar = () => {
     });
   }
 
-  return (
-
-    <Box sx={{ flexGrow: 1 }}>
+  return (<Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -81,7 +79,6 @@ export const Navbar = () => {
           </Button>
         </Toolbar>
       </AppBar>
-    </Box>
-  )
+    </Box>)
 }
 

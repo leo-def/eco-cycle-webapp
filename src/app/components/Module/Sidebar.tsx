@@ -1,7 +1,11 @@
 
 import React from 'react';
-import Drawer from '@mui/material/Drawer';
-import { Box, List } from '@mui/material';
+import {
+  Box,
+  List,
+  Drawer,
+  ClickAwayListener
+} from '@mui/material';
 import { getToggleSidebar, isSidebarOpen } from '../../hooks/Sidebar';
 import { getSetGroup } from '../../hooks/Module/Group/Set';
 import { GroupSidebar } from './Group/GroupSidebar';
@@ -17,13 +21,22 @@ export const Sidebar = React.memo((props: any) => {
   Sidebar.displayName = 'Sidebar';
   const anchor = 'left';
   const isOpen = isSidebarOpen();
+
   const toggleSidebar = getToggleSidebar();
   const setGroup = getSetGroup();
+
+  const handleClickAway = () => {
+    if(isOpen) {
+      toggleSidebar();
+    }
+  }
+
   return (
     <Drawer
       anchor={anchor}
       open={isOpen}
     >
+    <ClickAwayListener onClickAway={handleClickAway}>
       <Box
         sx={{ width: 250 }}
         role="presentation"
@@ -40,7 +53,7 @@ export const Sidebar = React.memo((props: any) => {
 
         </List>
       </Box>
-
+  </ClickAwayListener>
     </Drawer>
   );
 })
