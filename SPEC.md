@@ -1,194 +1,102 @@
 # EcoCycle Webapp - Technical Specification
 
-> Technical specification for the EcoCycle React frontend application.
-> Component and state management architecture for circular economy platform UI.
+> Standalone React + TypeScript frontend for the EcoCycle platform.
+> Served via Express static file server with Heroku deployment support.
 
 ## Executive Summary
 
-- **Project**: EcoCycle Webapp
-- **Type**: Single Page Application (React)
-- **Language**: TypeScript + React 17
-- **Status**: Active Development
-- **Owner**: Frontend team
+EcoCycle Webapp is a **React + TypeScript** SPA (Create React App) for the EcoCycle recycling platform. It is served in production via a lightweight **Express static file server** (`server.js`). The app supports i18n via a `locales/` directory. Deployable to Heroku via Procfile or Docker.
 
 ---
 
 ## 1. Problem Statement
 
 ### Context
-EcoCycle Webapp provides the user interface for circular economy transactions. Users (admins, collectors, suppliers) need intuitive forms and dashboards for managing products, locations, vehicles, and offers.
+Frontend for the EcoCycle platform — provides the user interface for eco-cycle/recycling operations.
 
 ### Goals
-- **Primary**: Deliver responsive, accessible UI for circular economy platform
-- **Secondary**: Maintain state consistency across pages with Redux
-- **Tertiary**: Support multi-language interface with i18next
-
-### Success Metrics
-- [x] Material Design compliance with MUI 5.4+
-- [x] Form validation with Formik + Yup
-- [x] Responsive design for desktop/tablet
-- [x] Dark/light theme support
-- [x] Internationalization (i18n) setup
-- [ ] Accessibility (WCAG 2.1) compliance
-- [ ] Performance: Lighthouse >85
+- React SPA with TypeScript type safety
+- i18n support via locales
+- Express static server for Heroku/Docker deployment
+- Separate from the monorepo for independent deployment
 
 ---
 
 ## 2. Technology Stack
 
-| Component | Technology | Version | Rationale |
-|-----------|-----------|---------|-----------|
-| Framework | React | 17.0+ | Component-based UI |
-| Language | TypeScript | 4.5+ | Type safety |
-| State Mgmt | Redux + Redux-Saga | 7.x/1.1+ | Centralized async state |
-| UI Library | Material-UI | 5.4+ | Professional components |
-| Styling | Styled Components | 5.3+ | Component-scoped CSS |
-| Forms | Formik + Yup | 2.2+/0.32+ | Form state & validation |
-| Routing | React Router | 6.2+ | Client-side navigation |
-| HTTP | Axios | 0.26+ | Promise-based requests |
-| I18n | i18next | 21.6+ | Multi-language UI |
-| Testing | React Testing Library | 12.0+ | Component testing |
+| Component | Technology | Version |
+|-----------|-----------|---------|
+| Framework | React | 17+ |
+| Language | TypeScript | 4.x |
+| Bundler | Create React App | Latest |
+| Server | Express (static files) | 4.x |
+| i18n | Custom locales | - |
+| Testing | React Testing Library | Latest |
+| Deployment | Heroku + Docker | - |
 
 ---
 
 ## 3. Architecture
 
-### High-Level Data Flow
-
 ```
-React Components
-    ↓
-Event Handlers (onClick, onChange, onSubmit)
-    ↓
-Redux Actions (dispatch)
-    ↓
-Redux-Saga (Middleware)
-    ↓
-API Service (Axios)
-    ↓
-Backend API
-    ↓
-[Response] → Redux Reducer → State Update → Component Re-render
-```
-
-### Page Structure
-
-```
-App
-├── Auth Pages
-│   ├── Login
-│   └── Signup
-├── Admin Pages (Protected)
-│   ├── Users
-│   ├── Groups
-│   ├── MeasurementUnits
-│   └── Products
-└── Group Pages (Protected)
-    ├── Collaborators
-    ├── Places
-    ├── Vehicles
-    ├── Items
-    └── Offers
-```
-
-### Component Hierarchy
-
-```
-Pages (Container components)
-├── Formik form wrappers
-├── Redux connected components
-└── Presentational Components
-    ├── Fieldsets (reusable form sections)
-    │   ├── ProductItemFieldset
-    │   ├── ValueFieldset
-    │   ├── PlaceAutocomplete
-    │   └── MediaCollectionFieldset
-    ├── Tables/Lists
-    └── Dialogs/Modals
+eco-cycle-webapp/
+├── server.js          # Express static server (serves build/)
+├── src/
+│   ├── index.tsx      # React entry point
+│   ├── app/           # App root component and routing
+│   ├── config/        # App configuration
+│   ├── locales/       # i18n strings
+│   └── index.css      # Global styles
+├── public/            # Static assets
+├── Procfile           # Heroku: web: node server.js
+└── Dockerfile
 ```
 
 ---
 
-## 4. State Management Pattern
+## 4. Production Serving
 
-### Redux Slice Structure
-```
-redux/
-├── store.ts              # Store configuration
-├── slices/
-│   ├── auth.slice.ts     # User authentication
-│   ├── groups.slice.ts   # Group data + CRUD sagas
-│   ├── products.slice.ts # Product catalog
-│   ├── places.slice.ts   # Location management
-│   ├── vehicles.slice.ts # Vehicle fleet
-│   └── offers.slice.ts   # Item offers
-└── hooks.ts              # useAppDispatch, useAppSelector
-```
-
-### Typical Slice Pattern
-```typescript
-// Actions (auto-generated by Redux Toolkit)
-createSlice({
-  name: 'products',
-  initialState: { items: [], loading: false, error: null },
-  reducers: {
-    setLoading, setError, ...
-  },
-  extraReducers: {
-    [fetchProducts.pending]: state => { state.loading = true },
-    [fetchProducts.fulfilled]: (state, action) => { state.items = action.payload }
-  }
+```javascript
+// server.js
+const app = express();
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-
-// Sagas handle API calls and side effects
-function* fetchProductsSaga(action) {
-  try {
-    const response = yield call(productService.getAll);
-    yield put(setProducts(response.data));
-  } catch (error) {
-    yield put(setError(error.message));
-  }
-}
+app.listen(process.env.PORT || 8080);
 ```
 
 ---
 
-## 5. File Structure
+## 5. Deployment & Operations
 
+```bash
+# Build React app
+npm run build
+
+# Serve (production)
+node server.js
+
+# Development
+npm start     # CRA dev server (port 3000)
+npm test      # React Testing Library
 ```
-src/
-├── pages/                 # Page containers
-│   ├── admin/            # Admin role pages
-│   ├── group/            # Group role pages
-│   └── auth/             # Public auth pages
-├── components/           # Reusable components
-│   ├── fieldsets/        # Form section components
-│   ├── tables/           # Data tables
-│   ├── dialogs/          # Modal dialogs
-│   └── common/           # Headers, footers, layout
-├── redux/                # State management
-│   ├── slices/           # Redux slices
-│   ├── sagas/            # Saga generators
-│   ├── selectors.ts      # State selectors
-│   └── store.ts          # Store config
-├── services/             # API clients
-│   ├── api.ts            # Base Axios instance
-│   ├── productService.ts
-│   ├── placeService.ts
-│   └── ...
-├── types/                # TypeScript interfaces
-│   └── models.ts         # Domain types
-├── utils/                # Helper functions
-└── index.tsx             # React entry point
-```
+
+**Heroku:** `web: node server.js`  
+**Docker:** `Dockerfile` present
 
 ---
 
-## 6. Key Patterns
+## 6. Issues Found
 
-- **Container/Presentational**: Smart (Redux-connected) containers, dumb presentation components
-- **Fieldset Components**: Reusable form sections (ProductItem, Value, Media, Place)
-- **Saga Listeners**: Centralized API handling with error recovery
-- **Context for Local State**: i18n, theme, group context (separate from Redux)
-- **Controlled Components**: Form inputs fully controlled by Formik state
+### Critical
+- **`server.js` only handles `GET /`** — all other routes return a 404 from Express (the static middleware won't catch client-side routes like `/dashboard`). For a React SPA with client-side routing, the catch-all should be:
+  ```javascript
+  app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'build', 'index.html')));
+  ```
+  Without this, direct URL navigation to any non-root route fails in production.
 
+### Missing
+- No API proxy configuration for production (CORS or nginx proxy needed to reach eco-cycle backend).
+- Build artifact (`build/`) should not be committed to git — verify `.gitignore`.
+- No environment variable management for API base URL in production.
